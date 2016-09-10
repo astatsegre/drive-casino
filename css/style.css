@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    max-width: 1323px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    width: 1323px;
+    height: 625px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-image: url(../img/main-background-full.jpg);
+}
+
+.payiron {
+  background-image: url("payiron.png");
+  opacity: 0.639;
+  position: absolute;
+  left: 473px;
+  top: 2070px;
+  width: 965px;
+  height: 53px;
+  z-index: 108;
+}
