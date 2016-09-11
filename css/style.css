@@ -192,4 +192,60 @@ main h2 {
 
 .advantages {
     text-align: center;
+    max-width: 930px;
+    margin: 0 auto 70px auto;
+}
+
+.advantage {
+    float: left;
+    width: 133px;
+    margin: 20px 25px 20px 25px;
+}
+
+.advantage-name {
+    font-size: 15px;
+    line-height: 16px;
+    color: #989bdf;
+}
+
+.advantage-img {
+    margin-bottom: 10px;
+}
+
+.btn-lets-play-footer {
+    display: block;
+    width: 310px;
+    height: 75px;
+    margin-bottom: 15px;
+    background: linear-gradient(to top, #ffd700, #f5a322);
+    border-radius: 5px;
+    color: #292929;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 75px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 0 1px #d78300,
+                0 5px 0 0 #836224;
+    text-shadow: -1px -1px 0 #000001,
+                 0.5px 0.5px 0 #ffffff;
+}
+
+.btn-shadow {
+    width: 310px;
+    height: 20px;
+    background: radial-gradient(at center, rgba(255,255,255,0.2), rgba(0,0,0,0.5));
+    border-radius: 200px / 20px;
+}
+
+.btn-container {
+    width: 312px;
+    margin: 0 auto 50px auto;
+}
+
+footer {
+    text-align: center;
 }
