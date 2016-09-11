@@ -22,12 +22,22 @@ body {
 }
 
 header {
-    width: 1323px;
+    position: relative;
+    width: 450px;
+    overflow: visible;
     height: 625px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background: url(../img/main-background-full.jpg) no-repeat center;
+    border-top: 1px solid black;
+/*    background: url(../img/main-background-full.jpg) no-repeat center;*/
+}
+
+.main-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -378px;
 }
 
 h2 {
@@ -66,10 +76,65 @@ h3 {
 
 .main-logo {
     margin: 70px 0 30px 0;
+/*    animation: change-background-2 2s infinite steps(2, end);*/
+/*
+    position: relative;
+    z-index: 5;
+*/
+}
+
+.main-logo-2 {
+    position: absolute;
+    left: 58px;
+    top: 69px;
+    opacity: 0;
+    animation: change-background 2s infinite steps(1, end);
+/*    z-index: 10;*/
+}
+
+.main-logo-div {
+    width: 335px;
+    height: 41px;
+    background: url(../img/main-logo-1.png) no-repeat center;
+    margin: 70px auto 60px auto;
+    animation: change-background 2s step-start infinite;
+}
+
+@keyframes change-background {
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes change-background-2 {
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
 }
 
 header h2 {
-    margin-bottom: 40px;
+    margin-bottom: 5px;
+}
+
+.features {
+    width: 420px;
+    height: 150px;
+    text-align: center;
+    margin-left: -15px;
+    overflow: hidden;
+}
+
+.feature {
+    display: inline-block;
+    width: 410px;
+    height: 140px;
+    animation: opacity-for-slider 15s infinite linear;
+}
+
+.features-container {
+    width: 2080px;
+    height: 150px;
+    animation: features-slider 15s infinite linear alternate;
 }
 
 .features p {
@@ -79,33 +144,106 @@ header h2 {
     text-transform: uppercase;
 }
 
+@keyframes features-slider {
+    0% {margin-left: 0}
+    30% {margin-left: 0}
+    35% {margin-left: -828px}
+    65% {margin-left: -828px}
+    70% {margin-left: -1654px}
+    100% {margin-left: -1654px}
+}
+
+@keyframes opacity-for-slider {
+    0% {opacity: 1}
+    30% {opacity: 1}
+    32% {opacity: 0}
+    35% {opacity: 1}
+    65% {opacity: 1}
+    67% {opacity: 0}
+    70% {opacity: 1}
+    100% {opacity: 1}
+}
+
+.machine-1 {
+    position: absolute;
+    top: 270px;
+    left: -342px;
+}
+
+.machine-2 {
+    position: absolute;
+    top: 270px;
+    left: -173px;
+}
+
+.machine-3 {
+    position: absolute;
+    top: 268px;
+    right: -352px;
+}
+
+.machine-4 {
+    position: absolute;
+    top: 268px;
+    right: -178px;
+}
+
 .btn-lets-play-main {
     display: block;
     width: 295px;
     height: 75px;
     background: url(../img/play-now-btn.png) no-repeat center;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
+    animation: btn-play-move 4s infinite ease-in-out alternate;
+}
+
+.btn-lets-play-main:hover {
+    animation-play-state: paused;
 }
 
 .btn-lets-play-main-shadow {
     width: 347px;
     height: 75px;
     background: url(../img/shadow-play-now-btn.png) no-repeat center;
-    margin: 30px auto 0 auto;
+    margin: 10px auto 0 auto;
+    animation: btn-play-shadow-change 4s infinite ease-in-out alternate;
+}
+
+.btn-lets-play-main:hover + .btn-lets-play-main-shadow {
+    animation-play-state: paused;
+}
+
+@keyframes btn-play-move {
+    0% {margin-top: 15px;
+    }
+    100% {margin-top: 45px;}
+}
+
+@keyframes btn-play-shadow-change {
+    0% {
+        margin-top: 10px;
+        opacity: 0.5;
+    }
+    100% {
+        margin-top: -20px;
+        opacity: 1;
+    }
 }
 
 .games {
     max-width: 910px;
     margin: -74px auto 0 auto;
+    text-align: center;
 }
 
 .game {
+    display: inline-block;
     width: 200px;
     height: 142px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    float: left;
-    margin: 19px 13px 19px 13px;
+    margin: 19px 12px 19px 12px;
     background: linear-gradient(to bottom, #333a41 0%, #9fa9b8 50%, #353c43 100%);
     padding-bottom: 5px;
 }
@@ -115,12 +253,33 @@ header h2 {
     height: 96px;
     background: url(../img/game-logo.jpg) no-repeat center;
     border: 1px solid #959fa9;
+    box-shadow: 0 1px 1px 0 rgb(0, 0, 1);
+    text-align: center;
+    transform: scale(1);
+    transition: transform 1s linear;
+}
+
+.game-logo-container {
+    position: relative;
+    width: 184px;
+    height: 96px;
+    overflow: hidden;
+    border: 1px solid #959fa9;
     margin: 8px 0 0 7px;
     box-shadow: 0 1px 1px 0 rgb(0, 0, 1);
     text-align: center;
 }
 
-
+.game-logo-hover {
+    width: 184px;
+    height: 96px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(at center, rgba(0,0,0,0), rgba(0,0,0,0.9));
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
 
 h4 {
     font-size: 18px;
@@ -132,7 +291,7 @@ h4 {
 }
 
 .game-lets-play {
-    display: none;
+    display: block;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -146,11 +305,27 @@ h4 {
     border: 1px solid rgba(255,255,255,0.3);
     box-shadow: 0 2px 1px 0 #052149;
     padding-top: 8px;
-    margin: 29px 0 0 25px;
+    margin: -49px 0 0 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: margin-top 200ms linear;
 }
 
-.game-logo:hover .game-lets-play{
-    display: block;
+.game-logo-container:hover .game-logo {
+    transform: scale(1.2);
+}
+
+.game-logo-container:hover .game-lets-play{
+    margin-top: 29px;
+}
+
+.game-logo-container:hover .game-logo-hover {
+    opacity: 0.9;
+}
+
+.game-lets-play:hover {
+    background: #0189ec;
 }
 
 main h2 {
@@ -197,9 +372,11 @@ main h2 {
 }
 
 .advantage {
-    float: left;
+/*    float: left;*/
+    display: inline-block;
     width: 133px;
-    margin: 20px 25px 20px 25px;
+    margin: 20px 24px 20px 24px;
+    vertical-align: top;
 }
 
 .advantage-name {
@@ -210,6 +387,12 @@ main h2 {
 
 .advantage-img {
     margin-bottom: 10px;
+    transform: rotateY(0);
+    transition: transform 300ms linear;
+}
+
+.advantage-img:hover {
+    transform: rotateY(180deg);
 }
 
 .btn-lets-play-footer {
@@ -234,6 +417,12 @@ main h2 {
                  0.5px 0.5px 0 #ffffff;
 }
 
+.btn-lets-play-footer:hover {
+    background: #ffd700;
+    position: relative;
+    top: -5px;
+}
+
 .btn-shadow {
     width: 310px;
     height: 20px;
@@ -248,4 +437,21 @@ main h2 {
 
 footer {
     text-align: center;
+}
+
+.btn-up {
+    width: 80px;
+    height: 80px;
+    padding-top: 30px;
+    background: #a19f9f;
+    opacity: 0.5;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-transform: uppercase;
+}
+
+.btn-up:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
